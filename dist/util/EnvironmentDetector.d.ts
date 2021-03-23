@@ -3,9 +3,9 @@ export interface IEnvironmentDetector {
   detect(): environmentName;
 }
 export declare function detectEnvironment():
+  | "server"
   | "browser"
-  | "react-native"
-  | "server";
+  | "react-native";
 export default class EnvironmentDetector {
   detect(): environmentName;
 }

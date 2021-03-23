@@ -21,4 +21,18 @@ Object.defineProperty(exports, "getAuthFetcherWithDependencies", {
     return dependencies_1.getAuthFetcherWithDependencies;
   }
 });
+var InMemoryStorage_1 = require("./storage/InMemoryStorage");
+Object.defineProperty(exports, "InMemoryStorage", {
+  enumerable: true,
+  get: function() {
+    return InMemoryStorage_1.default;
+  }
+});
+var StorageUtility_1 = require("./storage/StorageUtility");
+Object.defineProperty(exports, "StorageUtility", {
+  enumerable: true,
+  get: function() {
+    return StorageUtility_1.default;
+  }
+});
 //# sourceMappingURL=index.js.map
