@@ -52,6 +52,7 @@ export default class DpopHeaderCreator implements IDpopHeaderCreator {
 
   async createHeaderToken(audience: URL, method: string): Promise<string> {
     // TODO: update for multiple signing abilities
+    await this.dpopClientKeyManager.generateClientKeyIfNotAlready();
     const clientKey = await this.dpopClientKeyManager.getClientKey();
 
     if (clientKey === undefined) {
