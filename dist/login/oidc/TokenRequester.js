@@ -103,9 +103,11 @@ let TokenRequester = class TokenRequester {
         `${client.clientId}:${client.clientSecret}`
       )}`;
     }
-    const tokenResponse = await (
-      await this.fetcher.fetch(issuerConfig.tokenEndpoint, tokenRequestInit)
-    ).json();
+    const response = await this.fetcher.fetch(
+      issuerConfig.tokenEndpoint,
+      tokenRequestInit
+    );
+    const tokenResponse = await response.json();
     if (
       !(
         tokenResponse &&

@@ -43,6 +43,7 @@ let DpopHeaderCreator = class DpopHeaderCreator {
     return `${audience.origin}${audience.pathname}`;
   }
   async createHeaderToken(audience, method) {
+    await this.dpopClientKeyManager.generateClientKeyIfNotAlready();
     const clientKey = await this.dpopClientKeyManager.getClientKey();
     if (clientKey === undefined) {
       throw new Error("Could not obtain the key to sign the token with.");

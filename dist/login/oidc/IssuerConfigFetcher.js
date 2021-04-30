@@ -163,6 +163,7 @@ let IssuerConfigFetcher = class IssuerConfigFetcher {
     try {
       issuerConfig = this.processConfig(await issuerConfigRequestBody.json());
     } catch (err) {
+      console.log(err);
       throw new ConfigurationError_1.default(
         `[${issuer.toString()}] has an invalid configuration: ${err.message}`
       );
